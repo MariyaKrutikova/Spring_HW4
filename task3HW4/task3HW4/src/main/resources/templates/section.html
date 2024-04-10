@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Section</title>
+</head>
+<body>
+    <h1>Boys sections</h1>
+    <h2>View sections</h2>
+
+    <table>
+        <tr>
+            <th>SON NAME</th>
+            <th>SECTION NAME</th>
+            <th>SECTION DAY</th>
+        </tr>
+
+        <tr th:each="s: ${sections}" >
+            <td th:text="${s.sonName}"></td>
+            <td th:text="${s.sectionName}"></td>
+            <td th:text="${s.sectionDay}"></td>
+        </tr>
+    </table>
+
+    <h2>Add section</h2>
+    <form action="/sections" method="post">
+        Son name: <input type="text" name="sonName"><br />
+        Section name: <input type="text" step="any" name="sectionName"><br />
+        Section day: <input type="text" step="any" name="sectionDay"><br />
+        <button type="submit">Add section</button>
+    </form>
+</body>
+</html>
